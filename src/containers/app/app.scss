@@ -1,0 +1,12 @@
+.login-app {
+  background-color: black;
+  height: 100vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &__logo {
+    margin-bottom: 20px;
+  }
+}
