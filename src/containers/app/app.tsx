@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { QueryClient, QueryClientProvider, useQuery } from "react-query";
+import { useQuery } from "react-query";
 import { Button, Logo, FullScreenLoader } from "@pacificoseguros/styleguide";
 
 import "./app.scss";
