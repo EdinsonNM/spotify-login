@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useQuery } from "react-query";
-import { Button, Logo, FullScreenLoader } from "@pacificoseguros/styleguide";
+import { Button, Logo, FullScreenLoader } from "@ps/styleguide";
 
 import "./app.scss";
 import { AuthProvider } from "../../providers/auth.provider";
@@ -15,7 +15,6 @@ export default function Root({ code }) {
 
   const auth = () => {
     const authUrl = AuthProvider.getAuthUrl();
-    console.log(authUrl);
     window.location.href = authUrl;
   };
 
@@ -23,17 +22,16 @@ export default function Root({ code }) {
     if (isFetching) {
       setLoader(true);
     }
-  }, [isFetching]);
+  }, [isFetching, setLoader]);
 
   useEffect(() => {
     if (isSuccess) {
       setLoader(false);
     }
-  });
+  }, [setLoader, isSuccess]);
 
   useEffect(() => {
     if (data) {
-      console.log("Data:", data);
       localStorage.setItem("token", data.accessToken);
       window.location.href = "http://localhost:9000/home/player";
     }
