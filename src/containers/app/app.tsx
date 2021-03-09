@@ -32,7 +32,7 @@ export default function Root({ code }) {
 
   useEffect(() => {
     if (data) {
-      localStorage.setItem("token", data.accessToken);
+      localStorage.setItem("token", data.access_token);
       window.location.href = "http://localhost:9000/home/player";
     }
   }, [data]);
