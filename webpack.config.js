@@ -18,6 +18,7 @@ module.exports = (webpackConfigEnv, argv) => {
       },
     },
   })(defaultConfig, {
+    externals: [/^@ps\/.+/],
     // customize the webpack config here
     plugins: [new dotEnv()],
     module: {
