@@ -1,5 +1,6 @@
 const { mergeWithRules } = require("webpack-merge");
 const singleSpaDefaults = require("webpack-config-single-spa-react-ts");
+const dotEnv = require("dotenv-webpack");
 
 module.exports = (webpackConfigEnv, argv) => {
   const defaultConfig = singleSpaDefaults({
@@ -18,6 +19,7 @@ module.exports = (webpackConfigEnv, argv) => {
     },
   })(defaultConfig, {
     // customize the webpack config here
+    plugins: [new dotEnv()],
     module: {
       rules: [
         {
